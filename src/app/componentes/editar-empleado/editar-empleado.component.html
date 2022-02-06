@@ -1,13 +1,15 @@
 <div class="card">
     <div class="card-header">Agregar Empleado</div>
     <div class="card-body">
-      <form action="">
+      <form ngNativeValidate [formGroup]="formularioDeEmpleados" (ngSubmit)="enviarDatos()">
         <div class="mb-3">
           <label for="" class="form-label">Nombre</label>
           <input
             type="text"
             class="form-control"
+            required
             name=""
+            formControlName="nombre"
             id=""
             aria-describedby="helpId"
             placeholder="Escribe tu nombre"
@@ -19,16 +21,18 @@
           <input
             type="email"
             class="form-control"
+            required
             name=""
             id=""
+            formControlName="correo"
             aria-describedby="helpId"
             placeholder="Escribe tu correo"
           />
         </div>
   
         <div class="btn-group" role="group" aria-label="">
-          <button type="button" class="btn btn-success mx-1">Agregar</button>
-          <button type="button" class="btn btn-primary">Cancelar</button>
+          <button type="submit" class="btn btn-success mx-1">Actualizar</button>
+          <button type="button" class="btn btn-primary" routerLink="/listar-empleado/">Cancelar</button>
         </div>
       </form>
     </div>

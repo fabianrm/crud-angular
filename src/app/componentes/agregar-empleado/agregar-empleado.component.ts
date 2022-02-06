@@ -28,7 +28,9 @@ export class AgregarEmpleadoComponent implements OnInit {
   enviarDatos(): any {
     // console.log('Me presionaste');
     console.log(this.formularioDeEmpleados.value);
-    this.crudService.AgregarEmpleado(this.formularioDeEmpleados.value).subscribe();
-    this.ruteador.navigateByUrl('/listar-empleado');
+    this.crudService.AgregarEmpleado(this.formularioDeEmpleados.value).subscribe(respuesta=>{
+      this.ruteador.navigateByUrl('/listar-empleado');
+    });
+    
   }
 }
